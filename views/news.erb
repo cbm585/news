@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Fonts -->
+    <!-- Swap out "Roboto" for the font(s) you want to use -->
+    <link href="https://fonts.googleapis.com/css?family=Krona+One|Merriweather&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Your own CSS -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <title>Weather and Headlines</title>
+  </head>
+  <body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Weather and News</h1>
+        <p class="lead">Check out the weather in your area and top news headlines!</p>
+    </div>
+</div>
+
+  <div class="container mt-5">
+        <h1>Current Weather</h1> 
+        <div class = "row">
+            <div class = "col">
+                <h2>Temperature: <%=@current_temperature%> </h2>
+                <h2>Summary of Conditions: <%=@current_summary%> </h2>
+            </div>
+        </div>
+
+<div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <hr class="my-4">
+          <h1>Top News Stories </h1>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-sm-6 text-center">
+          <p><%= @title[0] %> </p>
+          <a href="<%= @story_link[0] %>" class="btn btn-success">Link</a>
+        </div>
+        <div class="col-sm-6 text-center">
+         <p><%= @title[1] %> </p>
+          <a href="<%= @story_link[1] %>" class="btn btn-success">Link</a>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <div class="container">
+      <div class="row mt-4">
+        <div class="col-sm-6 text-center">
+          <p><%= @title[2] %> </p>
+          <a href="<%= @story_link[2] %>" class="btn btn-success">Link</a>
+        </div>
+        <div class="col-sm-6 text-center">
+          <p><%= @title[3] %> </p>
+          <a href="<%= @story_link[3] %>" class="btn btn-success">Link</a>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <div class="container">
+      <div class="row mt-4">
+        <div class="col-sm-6 text-center">
+         <p><%= @title[4] %> </p>
+          <a href="<%= @story_link[4] %>" class="btn btn-success">Link</a>
+        </div>
+        <div class="col-sm-6 text-center">
+          <p><%= @title[5] %> </p>
+          <a href="<%= @story_link[5] %>" class="btn btn-success">Link</a>
+        </div>
+      </div>
+    </div>
+
+<div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <hr class="my-4">
+          <h1>Forecasted Weather </h1>
+        </div>
+
+  <div class="container mt-5">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Day</th>
+      <th scope="col">Temperature (high)</th>
+      <th scope="col">Conditions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= Time.at(@forecast_time[1]).strftime("%a") %></td>
+      <td><%= @forecast_temperature[1] %> </td>
+      <td><%= @forecast_summary[1] %></td>
+    </tr>
+    <tr>
+      <td><%= Time.at(@forecast_time[2]).strftime("%a") %></td>
+      <td><%= @forecast_temperature[2] %></td>
+      <td><%= @forecast_summary[2] %></td>
+    </tr>
+    <tr>
+      <td><%= Time.at(@forecast_time[3]).strftime("%a") %></td>
+      <td><%= @forecast_temperature[3] %></td>
+      <td><%= @forecast_summary[3] %></td>
+    </tr>
+    <tr>
+      <td><%= Time.at(@forecast_time[4]).strftime("%a") %></td>
+      <td><%= @forecast_temperature[4] %></td>
+      <td><%= @forecast_summary[4] %></td>
+    </tr>
+    <tr>
+      <td><%= Time.at(@forecast_time[5]).strftime("%a") %></td>
+      <td><%= @forecast_temperature[5] %></td>
+      <td><%= @forecast_summary[5] %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -18,12 +18,26 @@
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
 
-    <title>News</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <title>Enter Location</title>
   </head>
   <body>
 
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Weather and News</h1>
+        <p class="lead">Check out the weather in your area and top news headlines!</p>
+    </div>
+</div>
+
     <div class="container mt-5">
-      <h1>News</h1>
+      <h1>Enter Location</h1>
+        <form action="/news">
+            <label>Enter your location:</label>
+            <input type="text" name="location">
+            <button type="submit" class="btn btn-primary">Go there</submit>
+        </form>
     </div>
 
     <!-- Optional JavaScript -->
